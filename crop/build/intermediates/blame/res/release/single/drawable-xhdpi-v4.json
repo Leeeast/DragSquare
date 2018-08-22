@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\Demo\\DragSquare\\crop\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\crop__ic_cancel.png",
+        "source": "E:\\Demo\\DragSquare\\crop\\src\\main\\res\\drawable-xhdpi\\crop__ic_cancel.png"
+    },
+    {
+        "merged": "E:\\Demo\\DragSquare\\crop\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\crop__ic_done.png",
+        "source": "E:\\Demo\\DragSquare\\crop\\src\\main\\res\\drawable-xhdpi\\crop__ic_done.png"
+    },
+    {
+        "merged": "E:\\Demo\\DragSquare\\crop\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\crop__tile.png",
+        "source": "E:\\Demo\\DragSquare\\crop\\src\\main\\res\\drawable-xhdpi\\crop__tile.png"
+    }
+]
