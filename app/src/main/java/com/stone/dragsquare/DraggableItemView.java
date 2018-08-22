@@ -10,6 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
 import com.facebook.rebound.SpringConfig;
@@ -32,7 +33,7 @@ public class DraggableItemView extends FrameLayout {
     public static final int SCALE_LEVEL_2 = 2; // 中间状态，缩放比例scaleRate
     public static final int SCALE_LEVEL_3 = 3; // 最小状态，缩放比例是smallerRate
 
-    private ImageView imageView;
+    private SimpleDraweeView imageView;
     private View maskView;
     private int status;
     private float scaleRate = 0.5f;
@@ -46,7 +47,6 @@ public class DraggableItemView extends FrameLayout {
     private View.OnClickListener dialogListener;
 
     private String imagePath;
-    private View addView;
 
     public DraggableItemView(Context context) {
         this(context, null);
@@ -59,9 +59,8 @@ public class DraggableItemView extends FrameLayout {
     public DraggableItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         inflate(context, R.layout.drag_item, this);
-        imageView = (ImageView) findViewById(R.id.drag_item_imageview);
+        imageView = (SimpleDraweeView) findViewById(R.id.drag_item_imageview);
         maskView = findViewById(R.id.drag_item_mask_view);
-        addView = findViewById(R.id.add_view);
 
         dialogListener = new View.OnClickListener() {
             @Override
@@ -72,8 +71,7 @@ public class DraggableItemView extends FrameLayout {
                 } else {
                     // 删除
                     imagePath = null;
-                    imageView.setImageBitmap(null);
-                    addView.setVisibility(View.VISIBLE);
+                    imageView.setImageURI("");
                     parentView.onDedeleteImage(DraggableItemView.this);
                 }
             }
@@ -285,8 +283,8 @@ public class DraggableItemView extends FrameLayout {
 
     public void fillImageView(String imagePath) {
         this.imagePath = imagePath;
-        addView.setVisibility(View.GONE);
-        ImageLoader.getInstance().displayImage(imagePath, imageView);
+//        ImageLoader.getInstance().displayImage(imagePath, imageView);
+        imageView.setImageURI(imagePath);
     }
 
     // 以下两个get、set方法是为自定义的属性动画CustScale服务，不能删
