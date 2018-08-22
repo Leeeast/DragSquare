@@ -22,11 +22,11 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 public class DraggableItemView extends FrameLayout {
 
     public static final int STATUS_LEFT_TOP = 0;
-    public static final int STATUS_RIGHT_TOP = 1;
-    public static final int STATUS_RIGHT_MIDDLE = 2;
+    public static final int STATUS_RIGHT_TOP = 5;
+    public static final int STATUS_RIGHT_MIDDLE = 4;
     public static final int STATUS_RIGHT_BOTTOM = 3;
-    public static final int STATUS_MIDDLE_BOTTOM = 4;
-    public static final int STATUS_LEFT_BOTTOM = 5;
+    public static final int STATUS_MIDDLE_BOTTOM = 2;
+    public static final int STATUS_LEFT_BOTTOM = 1;
 
     public static final int SCALE_LEVEL_1 = 1; // 最大状态，缩放比例是100%
     public static final int SCALE_LEVEL_2 = 2; // 中间状态，缩放比例scaleRate

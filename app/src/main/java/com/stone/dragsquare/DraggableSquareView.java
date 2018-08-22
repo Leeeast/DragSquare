@@ -90,6 +90,12 @@ public class DraggableSquareView extends ViewGroup {
             originViewRectList.add(new Rect());
             addView(itemView);
         }
+        postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                requestLayout();
+            }
+        },50);
     }
 
     public Point getOriginViewPos(int status) {
@@ -255,6 +261,7 @@ public class DraggableSquareView extends ViewGroup {
         mLayoutRadius = dip2px(getContext(), 100);
         mBigRadius = dip2px(getContext(), 40);
         mSmallRadius = dip2px(getContext(), 23);
+        mSmallRadius = mBigRadius;
         Point centerP = new Point(getMeasuredWidth() / 2, mBigRadius);
         Point leftTopP = new Point(centerP.x - mLayoutRadius, centerP.y);
         Point leftBottomP = new Point((int) (centerP.x - mLayoutRadius * 0.707), (int) (centerP.y + mLayoutRadius * 0.707));
@@ -265,7 +272,7 @@ public class DraggableSquareView extends ViewGroup {
         int num = getChildCount();
         for (int i = 0; i < num; i++) {
             DraggableItemView itemView = (DraggableItemView) getChildAt(i);
-            itemView.setScaleRate(35f/80f);
+            itemView.setScaleRate(45f/80f);
             switch (itemView.getStatus()) {
                 case DraggableItemView.STATUS_LEFT_TOP:
                     itemLeft = centerP.x - mBigRadius;
